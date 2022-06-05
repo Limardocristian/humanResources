@@ -20,6 +20,7 @@
     "morgan": "~1.9.1",
     "mysql2": "^2.3.3",
     "node-oauth2-server": "^2.4.0",
+    "nodemon": "^2.0.16",
     "passport": "^0.5.2",
     "passport-google-oauth20": "^2.0.0",
     "passport-oauth2": "^1.6.1",
