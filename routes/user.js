@@ -5,10 +5,12 @@ const userController = require(global.config.routes.controller + "/userControlle
 const validator = require('../middlewares/validator');
 
 router.get("/",  userController.root);
-router.post("/edit",  userController.root);
-router.post("/edit",  userController.root);
-router.post("/delete",  userController.root);
-router.post("/see",  userController.root);
+router.post("/edit/:userId",  userController.edit);
+//router.post("/edit",  userController.root);
+router.post("/delete/:userId",  userController.delete);
+router.get("/show/:userId",  userController.show);
+router.post("/add/:userId",  userController.add);
+router.post("/clone/:userId",  userController.clone);
 
 
 

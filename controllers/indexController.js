@@ -66,6 +66,7 @@ const controller = {
       User.create({
           email: req.body.email,
           password: req.body.password,
+          name: req.body.name,             
       })
       .then(() => {
         return res.send('el usuario se creo correctamente');

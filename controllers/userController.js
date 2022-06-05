@@ -5,6 +5,7 @@ const Access_token = require('../models/Access_token');
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
+const { DELETE } = require('sequelize/types/query-types');
 require('dotenv').config();
 
 const controller = {
@@ -17,7 +18,41 @@ const controller = {
              res.send(Users);
          });
 	},
-  	
+    show: (req, res) => {
+        User.findByPk(req.userId)
+        .then(User => {
+                 res.send(User);
+             });
+    },
+    edit: (req, res) => {
+        User.findByPk(req.userId)
+        .then(User => {
+                 res.send(User);
+             });
+    },
+    delete: (req, res) => {
+        User.findByPk(req.userId)
+        .then(User => { 
+            res.send(User);
+             });
+    },
+    add: (req, res) => {
+        User.findByPk(req.userId)
+        .then(User => {
+             res.send(User);
+             });
+    },
+    clone: (req, res) => {
+        User.findByPk(req.userId)
+        .then(User => {
+                 res.send(User);
+             });
+    },
 };
+
+
+
+
+
 
 module.exports = controller;
