@@ -17,8 +17,13 @@ global.config = require('./config/config');
 
 
 const indexRoutes = require(global.config.routes.route + 'index');
+const userRoutes = require(global.config.routes.route + 'user');
+const documentRoutes = require(global.config.routes.route + 'document');
+
 
 
 app.use('/', indexRoutes);
+app.use('/user/', userRoutes);
+app.use('/document/', documentRoutes);
 
  
