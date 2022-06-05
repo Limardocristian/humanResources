@@ -28,6 +28,15 @@ User.init({
     sequelize,
     modelName: "user"
 });
+User.associate = function(models){
+    User.belongsTo(models.company, {
+            as: "company",
+            foreingKey: "company_id"
+        });
+}
+
+
+
 
 
 module.exports = User;

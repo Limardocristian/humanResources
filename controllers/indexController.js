@@ -1,14 +1,21 @@
 const sequelize = require('../config/db');
 const User = require('../models/User');
+const company = require('../models/Access_token');
 const Access_token = require('../models/Access_token');
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
 require('dotenv').config();
+const homeController = require('./class/indexClassObjet')
+
 
 const controller = {
-	root: (req, res) => {
-    User.findAll().then(Users => {
+	root: (req, res) => { 
+    User.findAll({
+      
+    }
+      
+    ).then(Users => {
              res.send(Users);
          });
 	},
@@ -68,7 +75,27 @@ const controller = {
     }
 
   },
-  
+  testing: function (req, res) { 
+    // User.findAll({
+    //       order:[['id','ASC']],
+    //       where: {  
+
+    //         name: req.body.name ? req.body.name : null,
+    //       }
+          
+    //       },
+         
+    //   // 
+    //   //   where:comuna 
+    //   // }
+    
+      
+    // ).then(Users => {
+    //        res.send(Users);             
+    //      });
+    var hola = homeController.root()
+    return hola;
+  },
 
    
     
