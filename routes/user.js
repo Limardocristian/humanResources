@@ -10,7 +10,6 @@ router.post("/edit/:userId",  userController.edit);
 router.post("/delete/:userId",  userController.delete);
 router.get("/show/:userId",  userController.show);
 router.post("/add/:userId",  userController.add);
-router.post("/clone/:userId",  userController.clone);
 
 
 
